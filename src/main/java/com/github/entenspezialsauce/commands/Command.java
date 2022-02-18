@@ -2,6 +2,8 @@ package com.github.entenspezialsauce.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
+import java.util.Arrays;
+
 public abstract class Command {
 
     private final String invoker;
@@ -19,15 +21,11 @@ public abstract class Command {
     }
 
     public String[] getAlias() {
-        return alias;
+        return this.alias;
     }
 
     public boolean isMe(String duckblood) {
-        if (this.invoker.equalsIgnoreCase(duckblood)) return true;
-        for (String item : alias) {
-            if(item.equalsIgnoreCase(duckblood)) return true;
-        }
-        return false;
+        return this.invoker.equalsIgnoreCase(duckblood) || Arrays.stream(this.alias).anyMatch(af -> af.equalsIgnoreCase(duckblood));
     }
 
 }
