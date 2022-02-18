@@ -11,7 +11,7 @@ public class Pong extends Command{
     @Override
     public void invoke(MessageReceivedEvent event, String... arguments) {
         var channel = event.getChannel();
-        if(boolIsInt(arguments[0]))
+        if(this.boolIsInt(arguments[0]))
             for (int i = 0; i < Integer.parseInt(arguments[0]); i++){
                 channel.sendMessage("Pong!").queue();
             }

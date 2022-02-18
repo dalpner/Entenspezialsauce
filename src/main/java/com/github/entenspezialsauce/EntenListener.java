@@ -34,7 +34,6 @@ public class EntenListener extends ListenerAdapter {
                 .findAny();
         if (commandOptional.isEmpty()) return;
         commandOptional.ifPresentOrElse((command) -> command.invoke(event, arguments), () -> this.noCommand(event.getChannel()));
-        commandOptional.get().invoke(event, arguments);
     }
 
     private String[] getAttributes(String message) {
