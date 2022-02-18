@@ -1,4 +1,4 @@
-package commands;
+package com.github.entenspezialsauce.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
