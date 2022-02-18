@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.0"
 }
 
 group 'com.github'
@@ -17,6 +18,20 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'net.dv8tion:JDA:4.4.0_350'
+}
+
+def mainClassName = 'com.github.entenspezialsauce.Discordbot'
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
 }
 
 test {
