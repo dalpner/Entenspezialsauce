@@ -1,6 +1,7 @@
 package com.github.entenspezialsauce;
 
 import com.github.entenspezialsauce.commands.Command;
+import com.github.entenspezialsauce.commands.Help;
 import com.github.entenspezialsauce.commands.Pong;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -13,7 +14,7 @@ import java.util.List;
 public class EntenListener extends ListenerAdapter {
 
     private final String prefix = "!";
-    private final List<Command> commands = List.of(new Pong());
+    private final List<Command> commands = List.of(new Pong(), new Help());
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -46,6 +47,12 @@ public class EntenListener extends ListenerAdapter {
 
     private void noCommand(MessageChannel channel) {
         channel.sendMessage("I'm am not that kind of duck").queue();
+    }
+    public String getPrefix() {
+        return this.prefix;
+    }
+    public List<Command> getCommands() {
+        return this.commands;
     }
 
 }
