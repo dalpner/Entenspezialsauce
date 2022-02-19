@@ -2,9 +2,9 @@ package com.github.entenspezialsauce.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class Pong extends Command{
+public class PongCommand extends Command{
 
-    public Pong() {
+    public PongCommand() {
         super("ping", "p","EntenspezialsaucePing", "sendNudes");
     }
 

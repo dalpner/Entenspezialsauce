@@ -2,8 +2,8 @@ package com.github.entenspezialsauce.commands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class GroupManager extends Command{
-    public GroupManager(String invoker, String... alias) {
+public class GroupManagerCommand extends Command{
+    public GroupManagerCommand(String invoker, String... alias) {
         super(invoker, alias);
     }
 

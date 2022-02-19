@@ -7,9 +7,9 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.*;
 
-public class Help extends Command{
+public class HelpCommand extends Command{
 
-    public Help() {
+    public HelpCommand() {
         super("help", "h", "imstuck");
     }
 
