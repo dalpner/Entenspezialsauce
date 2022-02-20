@@ -1,6 +1,7 @@
 package com.github.entenspezialsauce;
 
 import com.github.entenspezialsauce.commands.Command;
+import com.github.entenspezialsauce.commands.GroupMasterCommand;
 import com.github.entenspezialsauce.commands.HelpCommand;
 import com.github.entenspezialsauce.commands.PongCommand;
 import net.dv8tion.jda.api.entities.Message;
@@ -14,7 +15,7 @@ import java.util.List;
 public class EntenListener extends ListenerAdapter {
 
     private final String prefix = "!";
-    private final List<Command> commands = List.of(new PongCommand(), new HelpCommand());
+    private final List<Command> commands = List.of(new PongCommand(), new HelpCommand(), new GroupMasterCommand());
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
