@@ -34,6 +34,7 @@ public class EntenListener extends ListenerAdapter {
                 .filter((command) -> command.isMe(commandInvoker))
                 .findAny();
         if (commandOptional.isEmpty()) return;
+        event.getChannel().sendTyping().queue();
         commandOptional.ifPresentOrElse((command) -> command.invoke(event, arguments), () -> this.noCommand(event.getChannel()));
     }
 
@@ -48,9 +49,11 @@ public class EntenListener extends ListenerAdapter {
     private void noCommand(MessageChannel channel) {
         channel.sendMessage("I'm am not that kind of duck").queue();
     }
+
     public String getPrefix() {
         return this.prefix;
     }
+
     public List<Command> getCommands() {
         return this.commands;
     }
