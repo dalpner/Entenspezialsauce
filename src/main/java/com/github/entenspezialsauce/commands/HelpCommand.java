@@ -7,11 +7,8 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.*;
 
-public class HelpCommand extends Command{
-
-    public HelpCommand() {
-        super("help", "h", "imstuck");
-    }
+@Command.Info(value = "help", description = "Get some help!", aliases = {"h", "halp", "?"})
+public class HelpCommand extends Command {
 
     @Override
     public void invoke(MessageReceivedEvent event, String... arguments) {
@@ -23,7 +20,7 @@ public class HelpCommand extends Command{
         var commandList = entenListener.getCommands();
         int counter = 1;
         StringBuilder helpString = new StringBuilder();
-        for (Command commands:commandList) {
+        for (Command commands : commandList) {
             helpString.append(counter++).append(": ").append(entenListener.getPrefix()).append(commands.getInvoker()).append("\n");
             helpString.append("Hier könnte ihre Werbung stehen").append("\n");
         }
