@@ -21,9 +21,10 @@ public class GroupMasterCommand extends Command {
         var groupMasterBuilder = new EmbedBuilder();
         groupMasterBuilder.setColor(new Color(154, 61, 21));
         groupMasterBuilder.setTitle("I created new groups for your project.");
-        var messageIndex = 0;
+        var messageIndex = 1;
         for (String argument : arguments) {
             if (!argument.startsWith("\"")) messageIndex++;
+            if (argument.startsWith("\"")) break;
         }
 
         for (int i = 0; i < messageIndex - 1; i++) {
